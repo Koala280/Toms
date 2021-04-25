@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+@media all {
+
+    * {
+        font-family: sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /***************NAVIGATION***************/
+    nav .cLogo {
+        float: left;
+    }
+
+    nav .cLogo img {
+        height: 10vh;
+        transition: .5s;
+    }
+
+    #idNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 12vh;
+        padding: 2vh 12vh;
+        box-sizing: border-box;
+        transition: .5s;
+    }
+
+    #idNavUl {
+        display: flex;
+        float: right;
+        margin: 0;
+        padding: 0;
+    }
+
+    #idNavUl li {
+        list-style: none; /*ohne Aufzählungspunkte*/
+    }
+
+    nav ul li a {
+        line-height: 6vh;
+        font-family: 'Roboto', sans-serif;
+        padding: 1vh 2vh;
+        color: #262626;
+        text-decoration: none; /*unterstreichung der Links weg*/
+        text-transform: uppercase; /*alles groß geschrieben*/
+        transition: .5s;
+    }
+
+    nav ul li.cLinkActive a {
+        color: #fff;
+        background: #E2472F;
+        border-radius: 2vh;
+    }
+
+    nav ul li.cLinkSub {
+        height: 0;
+        display: block;
+        visibility: hidden;
+    }
+
+    nav ul ul:hover .cLinkSub, 
+    nav ul ul:focus .cLinkSub,
+    nav ul ul:active .cLinkSub {
+        visibility: visible;
+        height: auto;
+        color: #fff;
+        background: #E2472F;
+        border-radius: 2vh;
+        transition: .3s;
+    }
+
+    nav li:focus-within .cLinkSub  { 
+        visibility: visible;
+        height: auto;
+        color: #fff;
+        background: #E2472F;
+        border-radius: 2vh;
+        transition: .3s;
+    }   /*Für Browser, die focus-within nicht verstehen muss die Regel getrennt werden, damit sie wenigstens auf focus oder hover reagieren. */
+
+    nav ul li a:hover {
+        color: #fff;
+        background: #E2472F;
+        border-radius: 2vh;
+    }
+
+    nav.dark .cLogo img {
+        height: 8vh;
+        transition: .5s;
+    }
+
+    #idNav.dark {
+        background: rgba(0, 0, 0, .8);
+        height: 10vh;
+        padding: 2vh 6vh;
+    }
+
+    #idNav.dark ul li a {
+        color: #fff;
+    }
+
+    #idNavUlSmall {
+        display: none;
+    }
+
+    .cSubMenuSmall {
+        display: none;
+    }
+
+    /******************Startseite**************************/
+
+    main {
+        background-color: antiquewhite;
+        margin: auto;
+        overflow: hidden;
+        text-align: center;
+        margin-top: 12vh;     /**************ALTERNATIVEN??????????????***************/
+    }
+
+    .cMainUNLI {
+        margin-top: 12vh;
+        text-align: center;
+        background: #4141416b;
+    }
+
+    .cAufgaben {
+        padding: 15vh;
+    }
+
+    .cRechner h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 2em;
+    }
+
+    .cRechner form {
+        margin-top: 1vh;
+        font-size: 2em;
+    }
+
+    #hideMe {
+        display: none;
+    }
+
+    #idAnimation {
+        position: relative;
+    }
+
+    #idCheckLogin {
+        display: none;
+    }
+
+    /************************AnmeldeSeite************************/
+
+    body#idAnmeldeSeiteBody {
+        background: url(http://localhost/Toms/img/winter.jpg);
+        background-size: cover;
+    }
+
+    .cForms {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 50vh;
+        padding: 4vh;
+        background: rgba(0, 0, 0, .8);
+        box-sizing: border-box;
+        box-shadow: 0 1.5vh 2.5vh rgba(0, 0, 0, .5);
+        border-radius: 4vh;
+    }
+    
+    .cForms h1 {
+        letter-spacing: 0.5vh;
+        color: #fff;
+        text-align: center;
+    }
+    
+    .cForms .inputBox {
+        position: relative;
+    }
+    
+    .cForms .inputBox input {
+        width: 100%;
+        padding: 1.5vh 0;
+        font-size: 2vh;
+        letter-spacing: 0.18vh;
+        color: #fff;
+        margin-bottom: 3vh;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+    }
+    
+    .cForms .inputBox label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1.5vh 0;
+        font-size: 2vh;
+        letter-spacing: 0.18vh;
+        color: #fff;
+        pointer-events: none;
+        transition: 0.5s;
+    }
+    
+    .cForms .inputBox input:focus ~ label,
+    .cForms .inputBox input:valid ~ label {
+        top: -2.6vh;
+        left: 0;
+        color: #03a9f4;
+        font-size: 1.7vh;
+    }
+    
+    .cForms .inputBox input:required {
+        box-shadow:none;
+    }
+    
+    .cForms .cSubmit {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #03a9f4;
+        padding: 1vh 2vh;
+        cursor: pointer;
+        border-radius: 1.4vh;
+    }
+
+    .cForms .cCheckBox {
+        color: #fff;
+    }
+
+    .cForms input[type="checkbox"] {
+        position: relative;
+        width: 2.5vh;
+        height: 2.5vh;
+        -webkit-appearance: none;
+        outline: none;
+        transition: .5s;
+    }
+
+    .cForms input[type="checkbox"]:before {
+        content: '';
+        position: absolute;
+        top: 0.9vh;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0.5vh solid #fff;
+        box-sizing: border-box;
+        transition: .5s;
+    }
+
+    .cForms input:checked[type="checkbox"]:before {
+        border-left: none;
+        border-top: none;
+        width: 1.2vh;
+        border-color: #0f0;
+        transform: rotate(45deg) translate(0.5vh, -1vh);
+    }
+
+    .cForms label {
+        font-size: 2vh;
+    }
+
+    /**********SETTINGS********************/
+
+    .cChangePassword button {
+        height: 5.5vh;
+    }
+
+    /*********FOOTER***************/
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #2626268a;
+        text-align: center;
+    }
+
+@media only screen and (max-width: 1050px) {
+
+    #idNavUl {
+        display: none;
+    }
+
+    #idNavUlSmall {
+        display: flex;
+        float: right;
+        margin: 0;
+        padding: 0;
+    }
+
+    #idNavUlSmall li {
+        list-style: none;
+    }
+
+
+    
+}
